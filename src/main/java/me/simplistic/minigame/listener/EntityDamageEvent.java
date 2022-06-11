@@ -24,7 +24,7 @@ public class EntityDamageEvent implements Listener {
 
         if (arena != null) {
             if (damager instanceof Player) {
-                event.setCancelled(true);
+                event.setCancelled(false);
             } else {
                 event.setCancelled(true);
             }

@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.scheduler.BukkitRunnable;
 
 public class PlayerDeathListener implements Listener {
 
@@ -24,9 +25,12 @@ public class PlayerDeathListener implements Listener {
 
         Arena arena = minigame.getArenaManager().getArena(killer);
 
-        if (arena.getState().equals(GameState.LIVE) && arena != null) {
+
+        if (arena.getState() == (GameState.LIVE) && arena != null) {
             arena.getGame().whoWon(killer);
-            victim.spigot().respawn();
+            new BukkitRunnable() {public void run() {
+                victim.spigot().respawn();
+            }}.runTaskLater(minigame,1);
 
         }
 

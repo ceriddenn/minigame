@@ -25,6 +25,7 @@ public class Minigame extends JavaPlugin {
         Bukkit.getServer().getPluginManager().registerEvents(new InventoryListener(this), this);
         Bukkit.getServer().getPluginManager().registerEvents(new ConnectListener(this), this);
         Bukkit.getServer().getPluginManager().registerEvents(new PlayerDeathListener(this), this);
+        Bukkit.getServer().getPluginManager().registerEvents(new EntityDamageEvent(this), this);
     }
 
     public ArenaManager getArenaManager() { return arenaManager; }

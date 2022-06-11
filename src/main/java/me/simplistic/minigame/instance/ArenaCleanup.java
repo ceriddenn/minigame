@@ -13,7 +13,7 @@ public class ArenaCleanup extends BukkitRunnable {
     public ArenaCleanup(Minigame minigame, Arena arena) {
         this.minigame = minigame;
         this.arena = arena;
-        this.countdownSeconds = 3;
+        this.countdownSeconds = 10;
 
     }
     public void start() {
@@ -29,7 +29,7 @@ public class ArenaCleanup extends BukkitRunnable {
             return;
         }
 
-        if(countdownSeconds <= 5) {
+        if(countdownSeconds <= 10) {
             arena.sendMessage(ChatColor.GREEN + "Returning to lobby in " + countdownSeconds + " second" + (countdownSeconds == 1 ? "" : "s") + ".");
         }
         countdownSeconds--;

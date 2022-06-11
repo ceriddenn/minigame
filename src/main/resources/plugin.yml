@@ -1,0 +1,5 @@
+name: Minigame
+version: '${project.version}'
+main: me.simplistic.minigame.Minigame
+commands:
+  game:
